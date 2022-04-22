@@ -1,0 +1,477 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext (В конец)
+@import "fonts";
+//</Подключаем шрифты>=======================================================================================
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,700,700italic);
+@font-face {
+	font-family: "Akzidenz";
+	src: url("../fonts/AkzidenzGroteskBQCondensedBold.eot");
+	src: local("☺"), url("../fonts/AkzidenzGroteskBQCondensedBold.woff") format("woff"),
+		url("../fonts/AkzidenzGroteskBQCondensedBold.ttf") format("truetype"),
+		url("../fonts/AkzidenzGroteskBQCondensedBold.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Bebas";
+	src: url("../fonts/BebasNeueRegular.eot");
+	src: local("☺"), url("fonts/BebasNeueRegular.woff") format("woff"),
+		url("../fonts/BebasNeueRegular.ttf") format("truetype"), url("../fonts/BebasNeueRegular.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+//<Иконочные шрифты>==========================================================================================
+//@import "icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "PT Sans";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 880;
+$md1: $maxWidthContainer + 12;
+$md2: 750.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+body {
+	color: #000;
+	font-size: 14px;
+	background-color: #ffffff;
+	&._lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	@media (max-width: $md1+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms";
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "datepicker";
+//@import "lightgallery";
+//@import "pagging";
+@import "popup";
+@import "header";
+@import "footer";
+@import "home";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	flex: 1 1 auto;
+}
+//===================================================================================================================================
+.content {
+}
+.private {
+	margin: 0px 0px 75px 0px;
+	@media (max-width: $md2+px) {
+		margin: 0px 0px 40px 0px;
+	}
+	background-color: #000;
+	display: flex;
+	&__column {
+		flex: 0 0 50%;
+		@media (max-width: $md2+px) {
+			flex: 1 1 100%;
+			&:first-child {
+				display: none;
+			}
+		}
+	}
+
+	&__image {
+		height: 100%;
+	}
+}
+.private-body {
+	padding: 75px 0px 75px 60px;
+	@media (max-width: $md1+px) {
+		padding: 50px 0px 50px 30px;
+	}
+	&-content {
+		max-width: 305px;
+		@media (max-width: $md2+px) {
+			max-width: 100%;
+			text-align: center;
+		}
+	}
+	&__title {
+		font-family: Akzidenz;
+		font-size: 50px;
+		line-height: 50px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #ffffff;
+		margin: 0px 0px 30px 0px;
+		@media (max-width: $md1+px) {
+			font-size: 35px;
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	&__text {
+		font-size: 15px;
+		line-height: 25px;
+		color: #ffffff;
+		margin: 0px 0px 50px 0px;
+	}
+}
+.private-body-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&__item {
+		margin: 0px 15px 0px 0px;
+	}
+	&__link {
+		font-family: Bebas;
+		font-size: 15px;
+		line-height: 25px;
+		text-decoration: underline;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #fffffe;
+	}
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+.products {
+	margin: 0px 0px 40px 0px;
+	@media (max-width: $md2+px) {
+		margin: 0px 0px 0px 0px;
+	}
+	&__column {
+		margin: 0px 0px 40px 0px;
+		flex: 0 0 25%;
+		@media (max-width: $md2+px) {
+			flex: 0 0 50%;
+		}
+		@media (max-width: 380px) {
+			flex: 1 1 100%;
+		}
+	}
+}
+
+.products-body {
+	display: flex;
+	@media (max-width: $md2+px) {
+		flex-wrap: wrap;
+	}
+}
+.products-item {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	&__image {
+		display: block;
+		padding: 0px 0px 100% 0px;
+		margin: 0px 0px 25px 0px;
+	}
+	&__title {
+		max-width: 185px;
+		height: 50px;
+		overflow: hidden;
+		display: block;
+		font-family: Akzidenz;
+		font-size: 25px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		color: #000000;
+		margin: 0px 0px 30px 5px;
+		padding: 0px 10px 0px 0px;
+		@media (max-width: 380px) {
+			max-width: none;
+			text-align: center;
+			margin: 0px 0px 10px 5px;
+		}
+	}
+
+	&__text {
+		flex: 1 1 auto;
+		max-width: 195px;
+		margin: 0px 0px 25px 5px;
+		padding: 0px 10px 0px 0px;
+		font-size: 15px;
+		line-height: 25px;
+		color: #000000;
+		@media (max-width: 380px) {
+			max-width: none;
+			text-align: center;
+		}
+	}
+
+	&__btn {
+		justify-content: center;
+		margin: 0px 5px 25px 5px;
+	}
+
+	&__link {
+		display: block;
+		font-family: Bebas;
+		font-size: 15px;
+		line-height: 25px;
+		text-decoration: underline;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #000000;
+		margin: 0px 5px 0px 5px;
+	}
+}
+//====================================================================================================
+
+.why {
+	margin: 0px 0px 80px 0px;
+	@media (max-width: $md3+px) {
+		margin: 0px 0px 40px 0px;
+	}
+}
+.why-top {
+	display: flex;
+	background-color: #000;
+	&__column {
+		flex: 0 0 50%;
+		@media (max-width: $md1+px) {
+			flex: 1 1 100%;
+			&:last-child {
+				display: none;
+			}
+		}
+	}
+
+	&__text {
+		text-align: right;
+		font-family: Akzidenz;
+		font-size: 50px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		color: #ffffff;
+		padding: 50px 60px 50px 0px;
+		@media (max-width: $md1+px) {
+			text-align: center;
+			padding: 40px 0px 40px 0px;
+			font-size: 40px;
+		}
+		@media (max-width: $md2+px) {
+			padding: 30px 0px 30px 0px;
+			font-size: 30px;
+		}
+	}
+
+	&__image {
+		height: 100%;
+	}
+}
+.why-body-row {
+	display: flex;
+	flex-wrap: wrap;
+}
+.why-body {
+	padding: 50px 0px 0px 0px;
+	background-color: #ebebeb;
+	&__column {
+		flex: 0 0 50%;
+		margin: 0px 0px 50px 0px;
+		@media (max-width: $md1+px) {
+			flex: 1 1 100%;
+		}
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 30px 0px;
+		}
+	}
+}
+.why-body-item {
+	margin: 0px 5px 0px 5px;
+	display: flex;
+	&__icon {
+		flex: 0 0 100px;
+		height: 100px;
+		background-color: #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: $md3+px) {
+			flex: 0 0 80px;
+			height: 80px;
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+
+	&__title {
+		flex: 1 1 auto;
+		display: block;
+		font-family: Akzidenz;
+		font-size: 25px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #000000;
+		@media (max-width: $md3+px) {
+			font-size: 20px;
+		}
+	}
+
+	&__text {
+		font-size: 15px;
+		line-height: 25px;
+		color: #000000;
+		padding: 0px 10px 0px 0px;
+		@media (max-width: $md3+px) {
+			padding: 0px 0px 0px 0px;
+		}
+	}
+}
+.why-body-item-body {
+	padding: 0px 0px 0px 12px;
+	flex: 1 1 100%;
+	display: flex;
+	flex-direction: column;
+}
+//====================================================================================================
+
+.contacts {
+	&__title {
+		font-family: Akzidenz;
+		font-size: 50px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #000000;
+		margin: 0px 0px 30px 0px;
+	}
+}
+.contacts-body {
+	display: flex;
+	flex-wrap: wrap;
+	&__column {
+		flex: 0 0 50%;
+		@media (max-width: $md2+px) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__item {
+		font-size: 15px;
+		display: inline-block;
+		line-height: 27px;
+		color: #000000;
+		margin: 0px 0px 20px 0px;
+		padding: 0px 0px 0px 35px;
+	}
+
+	&__item--1 {
+		background: url("../img/icons/05icon.png") 0 0 no-repeat;
+	}
+
+	&__item--2 {
+		background: url("../img/icons/07icon.png") 0 0 no-repeat;
+	}
+
+	&__item--3 {
+		background: url("../img/icons/06icon.png") 0 0 no-repeat;
+	}
+}
+
+.contacts-social {
+	display: flex;
+	&__item {
+		margin: 0px 30px 30px 0px;
+		&:last-child {
+			margin: 0px 0px 0px 0px;
+		}
+	}
+}
+
+.contacts-content {
+	display: flex;
+	background-color: #000;
+	@media (max-width: $md2+px) {
+		display: block;
+	}
+	&__column {
+		flex: 0 0 50%;
+	}
+
+	&__map {
+		height: 100%;
+		@media (max-width: $md2+px) {
+			height: 300px;
+		}
+	}
+}
+.contacts-content-form {
+	padding: 55px 0px 55px 60px;
+	@media (max-width: $md2+px) {
+		padding: 30px;
+	}
+	&__title {
+		margin: 0px 0px 28px 0px;
+		font-family: Akzidenz;
+		font-size: 25px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #ffffff;
+	}
+}
+.contacts-content-form-body {
+	max-width: 375px;
+	@media (max-width: 2px) {
+		max-width: none;
+	}
+}
+.contacts-content-form-line {
+	margin: 0px 0px 25px 0px;
+	&:last-child {
+		margin: 0px 0px 0px 0px;
+	}
+}
