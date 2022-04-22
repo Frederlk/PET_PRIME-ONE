@@ -1,0 +1,22 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.button {
+    color: #fff;
+    background-color: #000;
+    font-family: Bebas;
+    font-size: rem(15);
+    line-height: math.div(25, 15);
+    text-transform: uppercase;
+    letter-spacing: rem(1);
+    display: inline-flex;
+    padding: rem(15) rem(33);
+    &--w {
+        color: #000000;
+        background-color: #ffffff;
+    }
+    @media (min-width: 992px) {
+        &:hover {
+        }
+    }
+}

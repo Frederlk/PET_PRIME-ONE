@@ -1,0 +1,41 @@
+.footer {
+    &__container {
+        display: flex;
+        height: rem(125);
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            height: auto;
+            padding: rem(15) 0px;
+        }
+    }
+
+    &__column {
+        @media (max-width: $tablet) {
+            &:first-child {
+                order: 1;
+            }
+            &:last-child {
+                order: 2;
+                margin-bottom: rem(15);
+            }
+        }
+    }
+
+    &__text {
+        text-align: center;
+        font-size: rem(15);
+        line-height: math.div(25, 15);
+        color: $gray;
+        a {
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__logo {
+    }
+}
