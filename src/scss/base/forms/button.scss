@@ -2,8 +2,8 @@
 // Снипет (HTML): btn
 
 .button {
-    color: #fff;
-    background-color: #000;
+    color: $white;
+    background-color: $mainColor;
     font-family: Bebas;
     font-size: rem(15);
     line-height: math.div(25, 15);
@@ -11,12 +11,24 @@
     letter-spacing: rem(1);
     display: inline-flex;
     padding: rem(15) rem(33);
-    &--w {
-        color: #000000;
-        background-color: #ffffff;
-    }
-    @media (min-width: 992px) {
+    transition: all 0.3s ease 0s;
+    border: rem(1) solid transparent;
+    @media (any-hover: hover) {
         &:hover {
+            background-color: $white;
+            border: rem(1) solid $mainColor;
+            color: $mainColor;
+        }
+    }
+    &--w {
+        color: $mainColor;
+        background-color: $white;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $mainColor !important;
+                border: rem(1) solid $white !important;
+                color: $white !important;
+            }
         }
     }
 }

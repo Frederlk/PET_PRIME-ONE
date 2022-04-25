@@ -4,23 +4,14 @@
         height: rem(125);
         justify-content: space-between;
         align-items: center;
-        @media (max-width: $tablet) {
-            flex-direction: column;
+        @media (max-width: $mobile) {
+            flex-direction: column-reverse;
             height: auto;
             padding: rem(15) 0px;
         }
     }
 
     &__column {
-        @media (max-width: $tablet) {
-            &:first-child {
-                order: 1;
-            }
-            &:last-child {
-                order: 2;
-                margin-bottom: rem(15);
-            }
-        }
     }
 
     &__text {
@@ -37,5 +28,12 @@
     }
 
     &__logo {
+        @media (max-width: $mobile) {
+            display: inline-flex;
+            margin-bottom: rem(15);
+        }
+        img {
+            max-width: 100%;
+        }
     }
 }
