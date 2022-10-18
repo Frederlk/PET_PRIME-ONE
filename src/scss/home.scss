@@ -1,38 +1,33 @@
 .private {
     margin-bottom: rem(75);
+    background-color: $black;
+    @media (min-width: $tablet) {
+        display: flex;
+    }
     @media (max-width: $tablet) {
         margin-bottom: rem(40);
     }
-    background-color: #000;
-    display: flex;
-    &__column {
-        flex: 0 1 50%;
+    &__image-ibg {
+        @media (min-width: $tablet) {
+            flex: 0 1 50%;
+        }
         @media (max-width: $tablet) {
-            flex: 1 1 100%;
-            &:first-child {
-                display: none;
-            }
+            display: none;
         }
     }
 
-    &__image-ibg {
-        height: 100%;
-    }
-}
-
-.private-body {
-    padding: rem(75) 0px rem(75) rem(60);
-    @media (max-width: $tablet) {
-        padding: rem(50) rem(15);
-    }
     &__content {
-        max-width: rem(305);
+        padding: rem(75) 0px rem(75) rem(60);
         color: $white;
         @media (max-width: $tablet) {
-            max-width: 100%;
+            padding: rem(50) rem(15);
             text-align: center;
         }
+        @media (min-width: $tablet) {
+            flex: 0 1 rem(305);
+        }
     }
+
     &__title {
         font-family: Akzidenz;
         font-size: rem(50);
@@ -90,28 +85,25 @@
     @media (min-width: $tablet) {
         margin-bottom: rem(40);
     }
-    &__column {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(40) 0;
         margin-bottom: rem(40);
-        flex: 0 1 25%;
         @media (max-width: $tablet) {
-            flex: 0 1 50%;
+            grid-template-columns: repeat(2, 1fr);
         }
         @media (max-width: em(380)) {
-            flex: 1 1 100%;
+            grid-template-columns: 1fr;
         }
     }
-    &__body {
-        display: flex;
-        @media (max-width: $tablet) {
-            flex-wrap: wrap;
-        }
-    }
-}
 
-.products-item {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    &__item {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
     &__image-ibg {
         display: inline-flex;
         padding-bottom: 100%;
@@ -184,7 +176,8 @@
         }
     }
 }
-//====================================================================================================
+
+//========================================================================================================================================================
 
 .why {
     margin-bottom: rem(80);
@@ -196,22 +189,16 @@
     }
 }
 .why-top {
-    display: flex;
     background-color: $mainColor;
-    &__column {
-        flex: 0 1 50%;
-        @media (max-width: $pc) {
-            flex: 1 1 100%;
-            &:last-child {
-                display: none;
-            }
-        }
+    @media (min-width: $pc) {
+        display: flex;
     }
+
     &__text {
+        flex: 0 1 50%;
         text-align: right;
         font-family: Akzidenz;
         font-size: rem(50);
-        line-height: math.div(50, 50);
         text-transform: uppercase;
         letter-spacing: rem(5);
         color: $white;
@@ -227,7 +214,10 @@
         }
     }
     &__image-ibg {
-        height: 100%;
+        flex: 0 1 50%;
+        @media (max-width: $pc) {
+            display: none;
+        }
     }
 }
 
@@ -238,7 +228,8 @@
         display: flex;
         flex-wrap: wrap;
     }
-    &__column {
+    &__item {
+        display: flex;
         flex: 0 1 50%;
         margin-bottom: rem(50);
         @media (max-width: $pc) {
@@ -248,9 +239,7 @@
             margin-bottom: rem(30);
         }
     }
-}
-.why-body-item {
-    display: flex;
+
     &__icon {
         flex: 0 0 rem(100);
         height: rem(100);
@@ -294,7 +283,8 @@
         }
     }
 }
-//====================================================================================================
+
+//========================================================================================================================================================
 
 .contacts {
     &__container {
@@ -319,18 +309,15 @@
         flex-wrap: wrap;
     }
 
-    &__column {
-        flex: 0 1 50%;
-        @media (max-width: $tablet) {
-            flex: 1 1 100%;
-        }
-    }
-
     &__item {
         display: inline-block;
         line-height: math.div(27, 15);
         padding-left: rem(35);
         margin-bottom: rem(20);
+        flex: 0 1 50%;
+        @media (max-width: $tablet) {
+            flex: 1 1 100%;
+        }
     }
 
     &__item--1 {
@@ -357,38 +344,34 @@
 }
 
 .contacts-content {
-    display: flex;
     background-color: $mainColor;
-    @media (max-width: $tablet) {
-        display: block;
-    }
-    &__column {
-        flex: 0 1 50%;
+    @media (min-width: $tablet) {
+        display: flex;
     }
 
     &__map {
-        height: 100%;
-        width: 100%;
+        flex: 0 1 50%;
         @media (max-width: $tablet) {
             height: rem(300);
         }
     }
 }
+
 .contacts-content-form {
+    flex: 0 1 50%;
     padding: rem(55) 0px rem(55) rem(60);
     @media (max-width: $tablet) {
         padding: rem(30) rem(15);
     }
     &__title {
-        &:not(:last-child) {
-            margin-bottom: rem(28);
-        }
         font-family: Akzidenz;
         font-size: rem(25);
-        line-height: math.div(25, 25);
         text-transform: uppercase;
         letter-spacing: 0.1em;
         color: $white;
+        &:not(:last-child) {
+            margin-bottom: rem(28);
+        }
     }
     &__body {
         @media (min-width: $mobileSmall) {
@@ -396,9 +379,8 @@
         }
     }
     &__line {
-        margin-bottom: rem(25);
-        &:last-child {
-            margin: 0px 0px 0px 0px;
+        &:not(:last-child) {
+            margin-bottom: rem(25);
         }
     }
     &__button {

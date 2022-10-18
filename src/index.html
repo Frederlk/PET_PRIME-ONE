@@ -1,137 +1,234 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Prime One</title>
-    </head>
+<html lang="en">
+    @@include('html/_head.htm',{ "title":"Prime One" })
     <body>
-        <div class="rootpage">
-            <h1>Prime One</h1>
-            <div class="rootpage__info">Project Features</div>
-            <h2>Pages:</h2>
-            <ol class="rootpage__list">
-                <li><a target="_blank" href="home.html">Home Page</a></li>
-            </ol>
-            <div class="rootpage__contacts">
-                <h2>My contacts:</h2>
-                <p>Email: <a href="mailto:pertrinichshadow@gmail.com">pertrinichshadow@gmail.com</a></p>
-                <p>Phone: <a href="tel:375256474526">+375256474526</a></p>
-                <p>Social network: <a href="">Link to social network</a></p>
-            </div>
-        </div>
-    </body>
-    <style>
-        @charset "UTF-8";
-        @import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
-        *,
-        *::before,
-        *::after {
-            padding: 0px;
-            margin: 0px;
-            border: 0px;
-            box-sizing: border-box;
-        }
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            min-width: 320px;
-            width: 100%;
-            color: #fff;
-            background-color: #5e5373;
-        }
-        body {
-            font-family: Montserrat;
-            font-size: 100%;
-            line-height: 1;
-            font-size: 1rem;
-        }
-        a {
-            text-decoration: underline;
-            color: #ebe691;
-        }
-        a:visited {
-            text-decoration: underline;
-            color: #aaa768;
-        }
-        a:hover {
-            text-decoration: none;
-        }
-        ul li {
-            list-style: none;
-        }
-        img {
-            vertical-align: top;
-        }
-        .wrapper {
-            width: 100%;
-            min-height: 100%;
-            overflow: hidden;
-        }
-        .rootpage {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        @media (max-width: 767px) {
-            .rootpage {
-                padding: 30px 15px;
-            }
-        }
-        h1 {
-            color: #ebe691;
-            font-size: 2.5rem;
-            margin: 0px 0px 1.25rem 0px;
-        }
-        @media (max-width: 767px) {
-            h1 {
-                font-size: 1.85rem;
-                margin: 0px 0px 1.25rem 0px;
-            }
-        }
-        h2 {
-            color: #ebe691;
-            font-size: 1.25rem;
-            margin: 0px 0px 1rem 0px;
-        }
-        @media (max-width: 767px) {
-            h2 {
-                font-size: 1.125rem;
-                margin: 0px 0px 1rem 0px;
-            }
-        }
-        .rootpage__info {
-            line-height: 140%;
-            margin: 0px 0px 1.5rem 0px;
-        }
+        <div class="wrapper">
+            @@include('html/_header.htm',{})
+            <main class="page">
+                <section class="private">
+                    <div class="private__image-ibg">
+                        <img src="@img/1.jpg" alt="food" />
+                    </div>
+                    <div class="private__content">
+                        <h1 class="private__title">Private catering</h1>
+                        <p class="private__text">
+                            Treat your guests to a beautifully plated dinner, hand-crafted canapes or a casual
+                            BBQ.
+                        </p>
+                        <div class="private__buttons">
+                            <a href="#" class="private__button button button--w">Get a quote</a>
+                            <a href="#" class="private__link">View menus</a>
+                        </div>
+                    </div>
+                </section>
 
-        .rootpage__list {
-            margin: 0px 0px 2.25rem 1.25rem;
-        }
-        .rootpage__list li:not(:last-child) {
-            margin: 0px 0px 15px 0px;
-        }
-        .rootpage__contacts,
-        .rootpage__tnx {
-            border-radius: 200px;
-            padding: 20px 65px;
-            line-height: 140%;
-        }
-        @media (max-width: 767px) {
-            .rootpage__contacts,
-            .rootpage__tnx {
-                border-radius: 40px;
-                padding: 20px;
-            }
-        }
-        .rootpage__contacts {
-            background: #32b5a4;
-        }
-        .rootpage__contacts a {
-            color: #ebe691;
-        }
-    </style>
+                <section class="products">
+                    <div class="products__container">
+                        <div class="products__item">
+                            <a href="#" class="products__image-ibg">
+                                <img src="@img/2.jpg" alt="food" />
+                            </a>
+                            <div class="products__body">
+                                <a href="#" class="products__title">Corporate catering</a>
+                                <p class="products__text">
+                                    We are able to serve events from 2 to 2000 guests and always reasonable
+                                    prices.
+                                </p>
+                                <a href="#" class="products__button button">Get a quote</a>
+                                <a href="#" class="products__link">View menus</a>
+                            </div>
+                        </div>
+                        <div class="products__item">
+                            <a href="#" class="products__image-ibg">
+                                <img src="@img/3.jpg" alt="food" />
+                            </a>
+                            <div class="products__body">
+                                <a href="#" class="products__title">Private catering</a>
+                                <p class="products__text">
+                                    Fresh, seasonal and simple cuisine. Food is our business and our passion.
+                                </p>
+                                <a href="#" class="products__button button">Get a quote</a>
+                                <a href="#" class="products__link">View menus</a>
+                            </div>
+                        </div>
+                        <div class="products__item">
+                            <a href="#" class="products__image-ibg">
+                                <img src="@img/4.jpg" alt="food" />
+                            </a>
+                            <div class="products__body">
+                                <a href="#" class="products__title">Wedding catering</a>
+                                <p class="products__text">
+                                    We use only the best organic ingredients and gluten and dairy free
+                                    cooking.
+                                </p>
+                                <a href="#" class="products__button button">Get a quote</a>
+                                <a href="#" class="products__link">View menus</a>
+                            </div>
+                        </div>
+                        <div class="products__item">
+                            <a href="#" class="products__image-ibg">
+                                <img src="@img/5.jpg" alt="food" />
+                            </a>
+                            <div class="products__body">
+                                <a href="#" class="products__title">Online Ordering</a>
+                                <p class="products__text">
+                                    Successful catering is about organisation, high quality service, and great
+                                    food.
+                                </p>
+                                <a href="#" class="products__button button">Get a quote</a>
+                                <a href="#" class="products__link">View menus</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="why">
+                    <div class="why__top why-top">
+                        <h2 class="why-top__text">Why CHOOSE us?</h2>
+                        <div class="why-top__image-ibg">
+                            <img src="@img/6.jpg" alt="food" />
+                        </div>
+                    </div>
+                    <div class="why__body why-body">
+                        <div class="why-body__container">
+                            <div class="why-body__item">
+                                <div class="why-body__icon">
+                                    <img src="@img/icons/01icon.png" alt="icon" />
+                                </div>
+                                <div class="why-body__body">
+                                    <a href="#" class="why-body__title">Always fresh</a>
+                                    <p class="why-body__text">
+                                        Fresh, seasonal and simple cuisine. Food is our business and our
+                                        passion.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-body__item">
+                                <div class="why-body__icon">
+                                    <img src="@img/icons/02icon.png" alt="icon" />
+                                </div>
+                                <div class="why-body__body">
+                                    <a href="#" class="why-body__title">Reliable AND Flawless</a>
+                                    <p class="why-body__text">
+                                        Successful catering is about organisation, high quality service, and
+                                        great food.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-body__item">
+                                <div class="why-body__icon">
+                                    <img src="@img/icons/03icon.png" alt="icon" />
+                                </div>
+                                <div class="why-body__body">
+                                    <a href="#" class="why-body__title">Clean and Healthy</a>
+                                    <p class="why-body__text">
+                                        We use only the best organic ingredients and gluten and dairy free
+                                        cooking.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-body__item">
+                                <div class="why-body__icon">
+                                    <img src="@img/icons/04icon.png" alt="icon" />
+                                </div>
+                                <div class="why-body__body">
+                                    <a href="#" class="why-body__title">fits any size and budget</a>
+                                    <p class="why-body__text">
+                                        We are able to serve events from 2 to 2000 guests and always at
+                                        reasonable prices.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="contacts">
+                    <div class="contacts__container">
+                        <h2 class="contacts__title">Say hello</h2>
+                        <div class="contacts__body">
+                            <div class="contacts__item contacts__item--1">
+                                45-35 #B 39th St, Sunnyside, NY 11104
+                            </div>
+                            <a href="mailto:contact@primeone.com" class="contacts__item contacts__item--2"
+                                >contact@primeone.com
+                            </a>
+                            <a href="tel:7187777777" class="contacts__item contacts__item--3"
+                                >(718) 777-7777</a
+                            >
+                            <div class="contacts__social">
+                                <a href="#" class="contacts__social-item">
+                                    <img src="@img/icons/01social.png" alt="facebook" />
+                                </a>
+                                <a href="#" class="contacts__social-item">
+                                    <img src="@img/icons/02social.png" alt="twitter" />
+                                </a>
+                                <a href="#" class="contacts__social-item">
+                                    <img src="@img/icons/03social.png" alt="instagram" />
+                                </a>
+                                <a href="#" class="contacts__social-item">
+                                    <img src="@img/icons/04social.png" alt="google +" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts-content">
+                        <iframe
+                            class="contacts-content__map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.795376262633!2d-73.9282489843878!3d40.74452787932828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ed7be69e8c3%3A0xf1773104e079fcf0!2zMzl0aCBTdCwgUXVlZW5zLCBOWSAxMTEwMSwg0KHQqNCQ!5e0!3m2!1sru!2sby!4v1650892303420!5m2!1sru!2sby"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                        <div class="contacts-content-form">
+                            <div class="contacts-content-form__title">Get in touch</div>
+                            <form action="#" class="contacts-content-form__body">
+                                <div class="contacts-content-form__line">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        data-error="Enter your name"
+                                        placeholder="Name"
+                                        class="input"
+                                        data-required
+                                    />
+                                </div>
+                                <div class="contacts-content-form__line">
+                                    <input
+                                        type="text"
+                                        name="email"
+                                        data-error="Enter your email"
+                                        placeholder="E-mail or phone number"
+                                        class="input"
+                                        data-required="email"
+                                    />
+                                </div>
+                                <div class="contacts-content-form__line">
+                                    <textarea
+                                        type="text"
+                                        name="message"
+                                        data-error="Enter your message"
+                                        placeholder="Yout message"
+                                        class="input"
+                                        data-required
+                                    ></textarea>
+                                </div>
+                                <div class="contacts-content-form__line">
+                                    <button
+                                        type="submit"
+                                        class="contacts-content-form__button button--w button"
+                                    >
+                                        Send message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.htm',{})
+        </div>
+        @@include('html/_js.htm',{})
+    </body>
 </html>
