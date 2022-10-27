@@ -1,4 +1,4 @@
-[Prime One](http://prime-one.infinityfreeapp.com
+[Prime One](http://prime-one.infinityfreeapp.com)
 ----------------------------------------------------------------------------------------------
 
 Fully responsive page of Gathering service.  
@@ -14,7 +14,7 @@ All elements of the user interaction with the site are animated and create a ple
 
 ### External Links
 
-*   [Home Page](https://prime-one.infinityfreeapp.com)
+*   [Home Page](http://prime-one.infinityfreeapp.com)
 
 ### Built Date
 
